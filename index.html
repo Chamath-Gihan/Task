@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
 </head>
 <body>
-<section class="container mt-5">
+<!--<section class="container mt-5">-->
 <!--    <h1 id="h1ID">What is BOM & What is DOM</h1>-->
 <!--    <h1 class="h1Class">What is BOM & What is DOM</h1>-->
 <!--    <h2 id="h2ID">What really JS DO?</h2>-->
@@ -17,28 +17,55 @@
 <!--    <button class="btn btn-danger mt-3">Test</button>-->
 
 
-    <section class="container mt-3">
-        <section class="row">
-            <!--Case One-->
-            <div class="col">
-                <h1 id="H1">Hello There How are you.?</h1>
-                <input id="txt" class="form-control" type="text" placeholder="Input Something">
-                <button id="btn1" class="mt-2 btn btn-danger">Change Text</button>
-            </div>
+<!--    <section class="container mt-3">-->
+<!--        <section class="row">-->
+<!--            &lt;!&ndash;Case One&ndash;&gt;-->
+<!--            <div class="col">-->
+<!--                <h1 id="H1">Hello There How are you.?</h1>-->
+<!--                <input id="txt" class="form-control" type="text" placeholder="Input Something">-->
+<!--                <button id="btn1" class="mt-2 btn btn-danger">Change Text</button>-->
+<!--            </div>-->
 
-            <!--Case Two-->
-            <div class="col">
-                <h1>Input an Image Url</h1>
-                <input id="url" class="form-control" type="url" placeholder="Input Image URL">
-                <div id="img" style="height: 50vh" class="mt-2 border shadow"></div>
-                <button id="btn2" class="mt-2 btn btn-danger">Change Image</button>
+<!--            &lt;!&ndash;Case Two&ndash;&gt;-->
+<!--            <div class="col">-->
+<!--                <h1>Input an Image Url</h1>-->
+<!--                <input id="url" class="form-control" type="url" placeholder="Input Image URL">-->
+<!--                <div id="img" style="height: 50vh" class="mt-2 border shadow"></div>-->
+<!--                <button id="btn2" class="mt-2 btn btn-danger">Change Image</button>-->
+<!--            </div>-->
+<!--        </section>-->
+<!--    </section>-->
+<!--</section>-->
+
+    <section class="container">
+        <h1>Task Generator.!</h1>
+        <div class="row">
+            <div class="col-4">
+                <input id="txt" class="form-control" type="text" placeholder="Input a Task">
+                <button id="btn" class="btn btn-danger mt-2">Add Task</button>
             </div>
-        </section>
+            <div class="offset-1 col-3 shadow overflow-x-hidden" style="height: 70vh">
+                <ol id="list" class="list-group p-2">
+                    <li class="list-group-item">Task One</li>
+                </ol>
+            </div>
+        </div>
     </section>
-</section>
 
 <script>
 
+    //cace 03
+
+    let btn=document.querySelector("#btn");
+    let ol=document.querySelector("#list");
+
+    btn.addEventListener("click",function (){
+        let typInp=document.querySelector("#txt").value;
+        let li=document.createElement("li");
+        li.setAttribute("class","list-group-item");
+        li.textContent=typInp;
+        ol.append(li);
+    });
     // case 01
     /*document.getElementById("txt").addEventListener("keyup",function () {
         document.getElementById("H1").innerText = document.getElementById("txt").value;
@@ -50,7 +77,7 @@
 
 
     // case 02
-    document.querySelector("#btn2").addEventListener('click',function(){
+    /*document.querySelector("#btn2").addEventListener('click',function(){
         var typeValue=document.querySelector("#url").value;
         var divContainer=document.querySelector("#img");
 
@@ -58,7 +85,11 @@
         divContainer.style.backgroundPosition='center';
         divContainer.style.backgroundSize='contain';
         divContainer.style.backgroundRepeat='no-repeat';
-    })
+    })*/
+
+
+
+
     // document.getElementById("h1ID").addEventListener("click",function () {
     //     document.getElementById("h1ID").remove();
     // })
